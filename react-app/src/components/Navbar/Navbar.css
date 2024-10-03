@@ -1,0 +1,48 @@
+.navbar.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1em 3em;
+    background-color: black;
+    height: 10vh;
+}
+
+.navbar a {
+    color: white;
+}
+
+.navbar .left {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+}
+
+.navbar.logo {
+    max-height: 7.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,21 +1,29 @@
-import logo from './logo.svg';
+import logo from './favicon.png';
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter, 
         Route, 
         Routes } from 'react-router-dom';
+import * as sessionActions from './store/session';
+import Navbar from './components/Navbar';
 import './App.css';
 
 function App() {
   const dispatch = useDispatch();
+  const [isLoaded, setIsLoaded] = useState(false);
+  
+  useEffect(() => {
+    // console.log('App.js restoreUser dispatched');
+    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+  }, [dispatch]);
   
   return (
     <BrowserRouter>
-      <div className='main container'>
-        <div className='navbar container'>
-          Navbar Placeholder
+      <main>
+        <div className='app navbar container'>
+          <Navbar isLoaded={isLoaded} />
         </div>
-        <div className='body container'>
+        <div className='app body container'>
           <Routes>
             <Route path='/'>
               Homepage
@@ -31,7 +39,7 @@ function App() {
             </Route>
           </Routes>
         </div>
-      </div>
+      </main>
     </BrowserRouter>
   );
 }
