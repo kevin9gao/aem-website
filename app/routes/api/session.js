@@ -20,14 +20,23 @@ const validateLogin = [
     handleValidationErrors
 ];
 
+router.get(
+    '/hello',
+    (req, res) => {
+        res.json({"msg": "port 5432 is working"})
+    }
+)
+
 // Log in
 router.post(
     '/',
     validateLogin,
     asyncHandler(async (req, res, next) => {
-        const { credential, password } = req.body;
+        console.log('GOT TO SESSION API POST///////');
+        
+        const { email, password } = req.body;
 
-        const user = await User.login({ credential, password });
+        const user = await User.login({ email, password });
 
         if (!user) {
             const err = new Error('Login failed');

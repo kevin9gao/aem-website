@@ -4,7 +4,6 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js",
     "sequelize": "sequelize",
     "sequelize-cli": "sequelize-cli",
     "start": "per-env",
@@ -32,6 +31,7 @@
   },
   "devDependencies": {
     "dotenv-cli": "^7.4.2",
+    "http-proxy-middleware": "^3.0.2",
     "nodemon": "^3.1.7",
     "sequelize-cli": "^6.6.2"
   }
