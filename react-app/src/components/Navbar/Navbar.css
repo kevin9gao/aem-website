@@ -43,6 +43,30 @@
 .navbar .right {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    width: 30%;
+    margin-right: 3em;
+}
+
+.navbar .right a {
+    display: inline-block;
+}
+
+.navbar .right a::after {
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: blanchedalmond;
+    transition: 300ms;
+}
+
+.navbar .right a:hover::after {
+    width: 100%;
+}
+
+.app.navbar.container {
+    display: block;
+    position: sticky;
 }

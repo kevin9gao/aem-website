@@ -59,6 +59,7 @@ router.get(
     '/',
     restoreUser,
     (req, res) => {
+        console.log('got to restoreUser api /get')
         const { user } = req;
         if (user) {
             return res.json({
