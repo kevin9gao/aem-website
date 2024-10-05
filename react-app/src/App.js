@@ -9,7 +9,7 @@ import {
 import * as sessionActions from './store/session';
 import './App.css';
 import Navbar from './components/Navbar';
-import Login from './components/Login/login';
+import Login from './components/Auth/login';
 import HomePage from './components/Homepage';
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
     console.log('App.js restoreUser dispatched');
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
-  
+
 
   return (
     <BrowserRouter>

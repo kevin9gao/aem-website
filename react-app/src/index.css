@@ -16,6 +16,10 @@ main {
   height: 100vh;
 }
 
+.app.navbar.container {
+  height: 10vh;
+}
+
 .app.body.container {
   height: 90vh;
 }

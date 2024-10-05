@@ -2,26 +2,32 @@ import React, { useState } from "react";
 import * as sessionActions from '../../store/session';
 import Logo from '../../favicon.png';
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, redirect } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import './Auth.css';
 
 function Login() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
   const [email, setEmail] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    // return dispatch()
+    return dispatch(sessionActions.login({ email, password })).catch(
+      async (res) => {
+        // console.log('res', res);
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
+        // console.log('data.errors', data.errors);
+      }
+    );
   }
 
   if (user) {
-    return redirect('/');
+    navigate('/');
   }
 
   return (

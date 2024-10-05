@@ -6,12 +6,15 @@ const { secret, expiresIn } = jwtConfig;
 
 // Sends a JWT Cookie
 const setTokenCookie = (res, user) => {
+    console.log('SETTOKENCOOKIE')
     // Create the token.
     const token = jwt.sign(
         { data: user.toSafeObject() },
         secret,
         { expiresIn: parseInt(expiresIn) } // 604,800 seconds = 1 week
     );
+
+    // console.log('--------utils/auth.js token:', token)
 
     const isProduction = process.env.NODE_ENV === "production";
 

@@ -1,24 +1,38 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { UseSelector, useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, UseSelector, useSelector } from "react-redux";
 import Logo from '../../favicon.png';
 import './Navbar.css';
+import LogoutButton from "../Auth/logoutButton";
+import * as sessionActions from "../../store/session";
 
 function Navbar({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleDemoLogin = async (e) => {
+    e.preventDefault();
+    return dispatch(sessionActions.login({
+      email: 'demouser@demo.com',
+      password: 'password',
+    }));
+  }
 
   let sessionLinks;
 
   if (sessionUser) {
     sessionLinks = (
       <div id="session-links">
-        <span>Profile Button Placeholder</span>
+        <LogoutButton />
       </div>
     );
   } else {
     sessionLinks = (
       <div id="session-links">
-        <span>Demo User</span>
+        {process.env.NODE_ENV === 'development' && (
+          <button onClick={handleDemoLogin}>Demo User</button>
+        )}
         <NavLink to='/login'>Log In</NavLink>
         <span>Signup</span>
       </div>
