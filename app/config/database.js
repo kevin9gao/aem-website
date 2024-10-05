@@ -2,12 +2,12 @@ const config = require('./index');
 
 const db = config.db;
 
-console.log("Database Config:", {
-    username: db.username,
-    password: db.password,
-    database: db.database,
-    host: db.host
-});
+// console.log("Database Config:", {
+//     username: db.username,
+//     password: db.password,
+//     database: db.database,
+//     host: db.host
+// });
 
 
 module.exports = {
