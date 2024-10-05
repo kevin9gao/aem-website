@@ -1,17 +1,21 @@
 const config = require('./index');
 
 const db = config.db;
-const username = db.username;
-const password = db.password;
-const database = db.database;
-const host = db.host;
+
+console.log("Database Config:", {
+    username: db.username,
+    password: db.password,
+    database: db.database,
+    host: db.host
+});
+
 
 module.exports = {
     development: {
-        username,
-        password,
-        database,
-        host,
+        username: db.username,
+        password: db.password || '',
+        database: db.database,
+        host: db.host,
         dialect: 'postgres',
         seederStorage: 'sequelize'
     },
