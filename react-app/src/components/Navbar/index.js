@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, UseSelector, useSelector } from "react-redux";
-import Logo from '../../images/favicon.png';
+import Logo from '../../images/pure_favicon.png';
 import './Navbar.css';
 import LogoutButton from "../Auth/logoutButton";
 import * as sessionActions from "../../store/session";
@@ -16,7 +16,7 @@ function Navbar({ isLoaded }) {
     return dispatch(sessionActions.login({
       email: 'demouser@demo.com',
       password: 'password',
-    }));
+    })).then(navigate('/'));
   }
 
   let sessionLinks;
@@ -52,21 +52,23 @@ function Navbar({ isLoaded }) {
               src={Logo}
             />
           </div>
+        </a>
+        <a href="/" id="logo-link" className="navbar">
           <h2 className="navbar">AEMBioUSA</h2>
         </a>
       </div>
       <div className="right">
         <NavLink
-        className="navbar" activeClassName="active"
+        className={navData => navData.isActive ? 'active navbar' : 'navbar'}
         to="/">Home</NavLink>
         <NavLink
-        className="navbar" activeClassName="active"
+        className={navData => navData.isActive ? 'active navbar' : 'navbar'}
         to="/about-us">About Us</NavLink>
         <NavLink
-        className="navbar" activeClassName="active"
+        className={navData => navData.isActive ? 'active navbar' : 'navbar'}
         to="/shop">Shop</NavLink>
         <NavLink
-        className="navbar" activeClassName="active"
+        className={navData => navData.isActive ? 'active navbar' : 'navbar'}
         to="/contact-us">Contact Us</NavLink>
         {isLoaded && sessionLinks}
       </div>
