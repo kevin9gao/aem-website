@@ -54,6 +54,11 @@ app.use(
 app.use(routes);
 
 
+// app.use((req, res, next) => {
+//     console.log(`Received ${req.method} request for ${req.url}`);
+//     next();
+// });
+
 // Catch unhandled requests and forward to error handler.
 app.use((_req, _res, next) => {
     const err = new Error("The requested resource couldn't be found.");
