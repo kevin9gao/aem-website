@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, UseSelector, useSelector } from "react-redux";
-import Logo from '../../favicon.png';
+import Logo from '../../images/favicon.png';
 import './Navbar.css';
 import LogoutButton from "../Auth/logoutButton";
 import * as sessionActions from "../../store/session";
@@ -34,12 +34,12 @@ function Navbar({ isLoaded }) {
           <button onClick={handleDemoLogin}>Demo User</button>
         )}
         <NavLink to='/login'>Log In</NavLink>
-        <span>Signup</span>
+        <NavLink to='/signup'>Sign Up</NavLink>
       </div>
     )
   }
-  console.log('isLoaded', isLoaded);
-  console.log('sessionLinks', sessionLinks);
+  // console.log('isLoaded', isLoaded);
+  // console.log('sessionLinks', sessionLinks);
 
   return (
     <div className="navbar wrapper">
@@ -56,10 +56,18 @@ function Navbar({ isLoaded }) {
         </a>
       </div>
       <div className="right">
-        <NavLink className="navbar" to="/">Home</NavLink>
-        <NavLink className="navbar" to="/about-us">About Us</NavLink>
-        <NavLink className="navbar" to="/shop">Shop</NavLink>
-        <NavLink className="navbar" to="/contact-us">Contact Us</NavLink>
+        <NavLink
+        className="navbar" activeClassName="active"
+        to="/">Home</NavLink>
+        <NavLink
+        className="navbar" activeClassName="active"
+        to="/about-us">About Us</NavLink>
+        <NavLink
+        className="navbar" activeClassName="active"
+        to="/shop">Shop</NavLink>
+        <NavLink
+        className="navbar" activeClassName="active"
+        to="/contact-us">Contact Us</NavLink>
         {isLoaded && sessionLinks}
       </div>
     </div>

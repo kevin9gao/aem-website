@@ -1,4 +1,4 @@
-import logo from './favicon.png';
+import logo from './images/favicon.png';
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {
@@ -10,6 +10,7 @@ import * as sessionActions from './store/session';
 import './App.css';
 import Navbar from './components/Navbar';
 import Login from './components/Auth/login';
+import Signup from './components/Auth/signup';
 import HomePage from './components/Homepage';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    console.log('App.js restoreUser dispatched');
+    // console.log('App.js restoreUser dispatched');
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
@@ -35,6 +36,7 @@ function App() {
             <Route path='/shop' />
             <Route path='/contact' />
             <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
           </Routes>
         </div>
       </main>

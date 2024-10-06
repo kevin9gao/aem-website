@@ -6,7 +6,7 @@ const { secret, expiresIn } = jwtConfig;
 
 // Sends a JWT Cookie
 const setTokenCookie = (res, user) => {
-    console.log('SETTOKENCOOKIE')
+    // console.log('SETTOKENCOOKIE')
     // Create the token.
     const token = jwt.sign(
         { data: user.toSafeObject() },
@@ -30,7 +30,7 @@ const setTokenCookie = (res, user) => {
 };
 
 const restoreUser = (req, res, next) => {
-    console.log('restoreUser auth.js !!!!');
+    // console.log('restoreUser auth.js !!!!');
     // token parsed from cookies
     const { token } = req.cookies;
 

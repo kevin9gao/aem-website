@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import * as sessionActions from '../../store/session';
-import Logo from '../../favicon.png';
+import Logo from '../../images/favicon.png';
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import './Auth.css';
@@ -42,18 +42,20 @@ function Login() {
                   src={Logo}
                   alt='logo'
                 />
+              </NavLink>
+              <NavLink to='/'>
                 <span>AEMBioUSA</span>
               </NavLink>
             </div>
           </div>
-          <h4>Log in to AEM</h4>
+          <span>Log in to AEM</span>
           <form onSubmit={handleSubmit} id='login-form'>
-            <div>
+            <div className="errors">
               {errors.map((error, ind) => (
                 <div key={ind}>{error}</div>
               ))}
             </div>
-            <div>
+            <div className="input">
               <input
                 name='email'
                 type='text'
@@ -62,7 +64,7 @@ function Login() {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div>
+            <div className="input">
               <input
                 name='password'
                 type='password'
@@ -75,7 +77,7 @@ function Login() {
           </form>
           <div className='login-reroute' id='signup-reroute'>
             <div>Don't have an account?</div>
-            <NavLink to='/sign-up'>
+            <NavLink to='/signup'>
               Sign Up.
             </NavLink>
           </div>

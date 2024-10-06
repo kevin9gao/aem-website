@@ -32,11 +32,11 @@ export const login = (user) => async (dispatch) => {
 };
 
 export const restoreUser = () => async dispatch => {
-    console.log('got to restoreUser thunk');
+    // console.log('got to restoreUser thunk');
     const res = await csrfFetch('/api/session');
-    console.log('restoreUser thunk res', res);
+    // console.log('restoreUser thunk res', res);
     const data = await res.json();
-    console.log('restoreUser thunk data', data);
+    // console.log('restoreUser thunk data', data);
     dispatch(setUser(data.user));
     return res;
 }

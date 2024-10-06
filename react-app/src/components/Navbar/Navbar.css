@@ -101,3 +101,12 @@
   align-items: center;
   width: 30%;
 }
+
+.navbar .right a.active::after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  display: block;
+  background: blanchedalmond;
+  transition: 300ms;
+}
