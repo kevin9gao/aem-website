@@ -31,10 +31,10 @@ function Navbar({ isLoaded }) {
     sessionLinks = (
       <div id="session-links">
         {process.env.NODE_ENV === 'development' && (
-          <button onClick={handleDemoLogin}>Demo User</button>
+          <button onClick={handleDemoLogin} className="link">Demo User</button>
         )}
-        <NavLink to='/login'>Log In</NavLink>
-        <NavLink to='/signup'>Sign Up</NavLink>
+        <NavLink to='/login' className='link'>Log In</NavLink>
+        <NavLink to='/signup' className='link'>Sign Up</NavLink>
       </div>
     )
   }
