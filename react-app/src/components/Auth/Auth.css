@@ -141,18 +141,8 @@ footer {
 }
 
 .login-reroute a::after {
-  content: '';
-  width: 0px;
-  height: 1px;
-  display: block;
   background: black;
-  transition: 300ms;
 }
-
-.login-reroute a:hover::after {
-  width: 100%;
-}
-
 
 #login-container {
   width: 100%;
@@ -234,6 +224,7 @@ footer {
   display: block;
   background: black;
   transition: 300ms;
+  margin-top: .15em;
 }
 
 .auth.container button:hover::after {

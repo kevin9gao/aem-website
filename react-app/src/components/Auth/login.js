@@ -77,7 +77,7 @@ function Login() {
           </form>
           <div className='login-reroute' id='signup-reroute'>
             <div>Don't have an account?</div>
-            <NavLink to='/signup'>
+            <NavLink to='/signup' className='link'>
               Sign Up.
             </NavLink>
           </div>

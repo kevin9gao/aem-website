@@ -60,16 +60,7 @@
 }
 
 .navbar .right a::after {
-  content: '';
-  width: 0px;
-  height: 1px;
-  display: block;
   background: blanchedalmond;
-  transition: 300ms;
-}
-
-.navbar .right a:hover::after {
-  width: 100%;
 }
 
 .app.navbar.container {

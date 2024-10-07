@@ -41,3 +41,21 @@ a:visited {
   background-color: rgb(172, 168, 168);
   border-radius: 10px;
 }
+
+.link {
+  display: block;
+  text-wrap: nowrap;
+}
+
+.link::after {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  transition: 300ms;
+  margin-top: .15em;
+}
+
+.link:hover::after {
+  width: 100%;
+}

@@ -7,9 +7,8 @@ function HomePage() {
 
     return (
         <div className="home container">
-            <h1>Home Page</h1>
-            <div>
-                AEMBioUSA
+            <div id="top-banner">
+
             </div>
         </div>
     );

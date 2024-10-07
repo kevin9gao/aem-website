@@ -147,7 +147,7 @@ function Signup() {
           </form>
           <div className='login-reroute'>
             <div>Already have an account?</div>
-            <NavLink to='/login'>
+            <NavLink to='/login' className='link'>
               Log In.
             </NavLink>
           </div>

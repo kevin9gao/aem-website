@@ -59,16 +59,16 @@ function Navbar({ isLoaded }) {
       </div>
       <div className="right">
         <NavLink
-        className={navData => navData.isActive ? 'active navbar' : 'navbar'}
+        className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
         to="/">Home</NavLink>
         <NavLink
-        className={navData => navData.isActive ? 'active navbar' : 'navbar'}
+        className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
         to="/about-us">About Us</NavLink>
         <NavLink
-        className={navData => navData.isActive ? 'active navbar' : 'navbar'}
+        className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
         to="/shop">Shop</NavLink>
         <NavLink
-        className={navData => navData.isActive ? 'active navbar' : 'navbar'}
+        className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
         to="/contact-us">Contact Us</NavLink>
         {isLoaded && sessionLinks}
       </div>
