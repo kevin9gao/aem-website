@@ -1,0 +1,92 @@
+.banner.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 35px;
+  margin: 0 35px;
+  padding: 15vw 0 50px 0;
+}
+
+.banner.title {
+  font-size: 9vw;
+  max-width: 100%;
+  grid-column: 2 / span 7;
+}
+
+#split-box {
+  display: block;
+  text-align: start;
+  position: relative;
+  white-space: nowrap;
+  margin-bottom: -0.12em;
+  padding: 0px 0px 0.12em;
+  /* overflow: hidden; */
+  padding: .1em;
+}
+
+.split {
+  position: relative;
+  display: inline-block;
+  color: #3A3A1F;
+  /* Start invisible */
+  opacity: 0;
+  /* Start shifted to the left */
+  transform: translateX(-50px);
+  filter: blur(5px);
+}
+
+.animate {
+  animation: onReload 1s ease forwards;
+}
+
+
+/* make each letter animate sequentially */
+.split:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.split:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.split:nth-child(3) {
+  animation-delay: 0.14s;
+}
+
+.split:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.split:nth-child(5) {
+  animation-delay: 0.45s;
+}
+
+.split:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.split:nth-child(7) {
+  animation-delay: 0.9s;
+}
+
+.split:nth-child(8) {
+  animation-delay: 1.2s;
+}
+
+.split:nth-child(9) {
+  animation-delay: 1.5s;
+}
+
+
+@keyframes onReload {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+    filter: blur(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}

@@ -45,6 +45,7 @@ a:visited {
 .link {
   display: block;
   text-wrap: nowrap;
+  color: #3A3A1F;
 }
 
 .link::after {
@@ -58,4 +59,16 @@ a:visited {
 
 .link:hover::after {
   width: 100%;
+}
+
+* {
+  line-height: 1.25;
+  font-family: "NHaasGroteskDSPro",
+    "Lucida Sans",
+    Tahoma,
+    sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
 }
