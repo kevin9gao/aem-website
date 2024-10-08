@@ -17,8 +17,12 @@ const cookieParser = require('cookie-parser');
 const { environment } = require('./config');
 const isProduction = environment === 'production';
 const routes = require('./routes');
+const path = require('path');
+
+
 
 const app = express();
+
 
 const { ValidationError } = require('sequelize');
 
@@ -53,6 +57,12 @@ app.use(
 
 app.use(routes);
 
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, 'react-app/build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/react-app/build/index.html'));
+});
 
 // app.use((req, res, next) => {
 //     console.log(`Received ${req.method} request for ${req.url}`);
