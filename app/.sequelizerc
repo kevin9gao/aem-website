@@ -1,5 +1,6 @@
 const path = require('path');
 
+// tells sequelize where to find seeders, models, and migrations
 module.exports = {
   config: path.resolve('config', 'database.js'),
   'models-path': path.resolve('db', 'models'),

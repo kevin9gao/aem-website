@@ -2,6 +2,9 @@ require('dotenv').config();
 require('sequelize-cli/lib/sequelize').default = require('sequelize');
 const { Sequelize } = require('sequelize');
 
+// this file is useful if `npx sequelize [command]` in your cli is unable
+// to target the database specified in your .env file. To run this file,
+// run `npm run sequelize [command] instead.
 const sequelize = new Sequelize(
     process.env.DB_DATABASE,
     process.env.DB_USERNAME,

@@ -41,8 +41,9 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
   };
 
-  User.prototype.toSafeObject = function () { // remember, this cannot be an arrow function
-    const { id, username, email, firstName, lastName, createdAt } = this; // context will be the User instance
+  // user methods
+  User.prototype.toSafeObject = function () {
+    const { id, username, email, firstName, lastName, createdAt } = this;
     return { id, username, email, firstName, lastName, createdAt };
   };
 
