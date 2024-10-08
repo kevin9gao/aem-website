@@ -43,36 +43,71 @@ function Navbar({ isLoaded }) {
 
   return (
     <div className="navbar wrapper">
-      <div className="left">
-        <a href="/" id="logo-link" className="navbar">
-          <div className="logo wrapper">
-            <img
-              className="navbar logo"
-              alt="aembiousa-logo"
-              src={Logo}
-            />
-          </div>
-        </a>
-        <a href="/" id="logo-link" className="navbar">
-          <h2 className="navbar">AEMBioUSA</h2>
-        </a>
-      </div>
-      <div className="right">
-        <NavLink
-        className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
-        to="/">Home</NavLink>
-        <NavLink
-        className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
-        to="/about-us">About Us</NavLink>
-        <NavLink
-        className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
-        to="/shop">Shop</NavLink>
-        <NavLink
-        className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
-        to="/contact-us">Contact Us</NavLink>
-        {isLoaded && sessionLinks}
-      </div>
-    </div>
+      <ul>
+        <li className="nav-list-item">
+          <NavLink
+            className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
+            id="logo-home"
+            to="/">
+            <div className="logo wrapper">
+              <img
+                className="navbar logo"
+                alt="aembiousa-logo"
+                src={Logo}
+              />
+            </div>
+            <h2 className="navbar">AEMBioUSA</h2>
+          </NavLink>
+        </li>
+        <li className="nav-list-item">
+          <NavLink
+            className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
+            to="/about-us">
+            About Us
+          </NavLink>
+        </li>
+        <li className="nav-list-item">
+          <NavLink
+            className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
+            to="/shop">
+            Shop
+          </NavLink>
+        </li>
+        <li className="nav-list-item">
+          <NavLink
+            className={`${navData => navData.isActive ? 'active navbar' : 'navbar'} link`}
+            to="/contact-us">
+            Contact Us
+          </NavLink>
+        </li>
+        {sessionUser && (
+          <li className="nav-list-item">
+            <LogoutButton />
+          </li>
+        )}
+        {!sessionUser && process.env.NODE_ENV === 'development' && (
+          <li className="nav-list-item">
+            <button onClick={handleDemoLogin} className="link">
+              Demo User
+            </button>
+          </li>
+        )}
+        {!sessionUser && (
+          <li className="nav-list-item">
+            <NavLink to='/login' className='link'>
+              Login
+            </NavLink>
+          </li>
+        )}
+        {!sessionUser && (
+          <li className="nav-list-item">
+            <NavLink to='/signup' className='link'>
+              Sign Up
+            </NavLink>
+          </li>
+        )}
+      </ul>
+    </div >
   );
 }
 
