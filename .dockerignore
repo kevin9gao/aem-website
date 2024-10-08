@@ -1,7 +1,6 @@
 # flyctl launch added from .gitignore
 **/node_modules
 **/.env
-**/build
 **/.DS_Store
 **/.vscode
 
@@ -16,9 +15,6 @@ react-app/**/.pnp.js
 # testing
 react-app/coverage
 
-# production
-react-app/build
-
 # misc
 react-app/**/.DS_Store
 react-app/**/.env.local
@@ -29,4 +25,7 @@ react-app/**/.env.production.local
 react-app/**/npm-debug.log*
 react-app/**/yarn-debug.log*
 react-app/**/yarn-error.log*
-fly.toml
+
+# You can keep this if you don't need the build directory
+# to be included in the final image
+# react-app/build
