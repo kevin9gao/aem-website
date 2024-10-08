@@ -67,6 +67,8 @@ a:visited {
     "Lucida Sans",
     Tahoma,
     sans-serif;
+  color: #3A3A1F;
+  transition: 200ms;
 }
 
 h1, h2, h3, h4, h5, h6 {
