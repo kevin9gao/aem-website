@@ -11,3 +11,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+main {
+  height: 100vh;
+}
+
+.app.navbar.container {
+  height: 7vh;
+}
+
+.app.body.container {
+  height: 93vh;
+}
+
+a:visited {
+  color: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(94, 93, 93);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(172, 168, 168);
+  border-radius: 10px;
+}
+
+.link {
+  display: block;
+  text-wrap: nowrap;
+  color: #3A3A1F;
+}
+
+.link::after {
+  content: '';
+  width: 0px;
+  height: 1px;
+  display: block;
+  transition: 300ms;
+  margin-top: .15em;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+* {
+  line-height: 1.25;
+  font-family: "NHaasGroteskDSPro",
+    "Lucida Sans",
+    Tahoma,
+    sans-serif;
+  color: #3A3A1F;
+  transition: 200ms;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
