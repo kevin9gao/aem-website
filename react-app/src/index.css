@@ -17,11 +17,11 @@ main {
 }
 
 .app.navbar.container {
-  height: 10vh;
+  height: 7vh;
 }
 
 .app.body.container {
-  height: 90vh;
+  height: 93vh;
 }
 
 a:visited {
