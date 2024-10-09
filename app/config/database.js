@@ -17,7 +17,10 @@ module.exports = {
         database: db.database,
         host: db.host,
         dialect: 'postgres',
-        seederStorage: 'sequelize'
+        seederStorage: 'sequelize',
+        dialectOptions: {
+            ssl: false,
+        },
     },
     production: {
         use_env_variable: process.env.DATABASE_URL ? 'DATABASE_URL' : undefined,
@@ -29,7 +32,7 @@ module.exports = {
         seederStorage: 'sequelize',
         dialectOptions: {
             ssl: {
-                require: true,
+                require: false,
                 rejectUnauthorized: false,
             },
         },
