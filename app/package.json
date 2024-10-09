@@ -4,12 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "NODE_ENV=production node ./bin/www",
+    "start:dev": "nodemon -r dotenv/config ./bin/www",
     "test": "node app.js",
     "sequelize": "node sequelize-cli.js",
-    "sequelize-cli": "sequelize-cli",
-    "start": "per-env",
-    "start:development": "nodemon -r dotenv/config ./bin/www",
-    "start:production": "node ./bin/www"
+    "sequelize-cli": "sequelize-cli"
   },
   "author": "",
   "license": "ISC",
@@ -25,7 +24,6 @@
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
-    "per-env": "^1.0.2",
     "pg": "^8.13.0",
     "sequelize": "^6.37.4"
   },
