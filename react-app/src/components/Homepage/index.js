@@ -12,7 +12,7 @@ function HomePage() {
         const title = document.getElementsByClassName('split');
         for (let i = 0; i < title.length; i++) {
             const letter = title[i]
-            console.log('letter', letter)
+            // console.log('letter', letter)
             letter.classList.add('animate');
         }
     }, []);

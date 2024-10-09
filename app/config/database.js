@@ -20,14 +20,18 @@ module.exports = {
         seederStorage: 'sequelize'
     },
     production: {
-        use_env_variable: 'DATABASE_URL',
+        use_env_variable: process.env.DATABASE_URL ? 'DATABASE_URL' : undefined,
+        username: db.username,
+        password: db.password || '',
+        database: db.database,
+        host: db.host,
         dialect: 'postgres',
         seederStorage: 'sequelize',
         dialectOptions: {
             ssl: {
                 require: true,
-                rejectUnauthorized: false
-            }
-        }
+                rejectUnauthorized: false,
+            },
+        },
     }
 };
