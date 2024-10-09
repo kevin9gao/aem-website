@@ -2,12 +2,14 @@
 FROM node:16 AS build-frontend
 WORKDIR /frontend
 
-# Copy only the package.json and package-lock.json to install dependencies first
+# Copy package.json and package-lock.json to install dependencies first
 COPY react-app/package*.json ./
 RUN npm install
 
-# Copy the rest of the frontend source code
-COPY react-app ./react-app
+# Copy the rest of the frontend source code, including public/index.html
+COPY react-app/public ./public
+COPY react-app/src ./src
+COPY react-app/ ./
 
 # Build the React app (output will go to /frontend/build)
 RUN npm run build
@@ -16,7 +18,7 @@ RUN npm run build
 FROM node:16 AS build-backend
 WORKDIR /backend
 
-# Copy only the package.json and package-lock.json to install dependencies first
+# Copy package.json and package-lock.json to install dependencies first
 COPY app/package*.json ./
 RUN npm install
 
@@ -28,7 +30,6 @@ FROM node:16
 WORKDIR /app
 
 # Copy the built frontend files from the build-frontend stage
-# We copy from /frontend/build now
 COPY --from=build-frontend /frontend/build ./react-app/build
 
 # Copy the backend from the build-backend stage
