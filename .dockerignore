@@ -28,4 +28,8 @@ react-app/**/yarn-error.log*
 
 # You can keep this if you don't need the build directory
 # to be included in the final image
-# react-app/build
+react-app/build
+
+# Ignore dependency lock files if not needed
+app/package-lock.json
+react-app/package-lock.json
