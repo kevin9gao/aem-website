@@ -35,6 +35,9 @@ COPY --from=build-frontend /frontend/build ./react-app/build
 # Copy the backend from the build-backend stage
 COPY --from=build-backend /backend/app ./app
 
+# Install dotenv and other global dependencies if needed
+RUN npm install dotenv
+
 # Set the working directory to the backend's app directory
 WORKDIR /app/app
 
