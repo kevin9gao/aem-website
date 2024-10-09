@@ -38,6 +38,9 @@ COPY --from=build-backend /backend/app ./app
 # Install dotenv and other global dependencies if needed
 RUN npm install dotenv
 
+# Install the backend dependencies in the final image
+RUN npm install --prefix ./app
+
 # Set the working directory to the backend's app directory
 WORKDIR /app/app
 
