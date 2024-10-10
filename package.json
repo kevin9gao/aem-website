@@ -1,25 +1,26 @@
 {
   "name": "aem-website",
   "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
   "scripts": {
-    "start": "cd app && npm install && npm start",
-    "heroku-postbuild": "cd react-app && npm install && npm run build",
-    "sequelize": "sequelize",
-    "db:migrate": "sequelize db:migrate"
+    "heroku-postbuild": "npm run build --prefix react-app",
+    "install": "npm --prefix app install app && npm --prefix react-app install react-app",
+    "dev:app": "npm install --prefix app start",
+    "dev:react-app": "npm install --prefix react-app start",
+    "sequelize": "npm run --prefix app sequelize",
+    "sequelize-cli": "npm run --prefix app sequelize-cli",
+    "start": "npm start --prefix app"
   },
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "csurf": "^1.11.0",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.0",
-    "express-async-handler": "^1.2.0",
-    "express-validator": "^7.2.0",
-    "helmet": "^8.0.0",
-    "jsonwebtoken": "^9.0.2",
-    "morgan": "^1.10.0",
-    "pg": "^8.13.0",
-    "sequelize": "^6.37.4"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevin9gao/aem-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevin9gao/aem-website/issues"
+  },
+  "homepage": "https://github.com/kevin9gao/aem-website#readme"
 }
