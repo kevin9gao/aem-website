@@ -23,6 +23,16 @@ if (process.env.DATABASE_URL) {
   });
 }
 
+// Confirms the connection to the database
+(async () => {
+  try {
+    await sequelize.authenticate();
+    console.log('Connected to the database!');
+  } catch (err) {
+    console.error('Error connecting to the database:', err);
+  }
+})();
+
 fs
   .readdirSync(__dirname)
   .filter(file => {

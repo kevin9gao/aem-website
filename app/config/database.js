@@ -23,18 +23,8 @@ module.exports = {
         },
     },
     production: {
-        use_env_variable: process.env.DATABASE_URL ? 'DATABASE_URL' : undefined,
-        username: db.username,
-        password: db.password || '',
-        database: db.database,
-        host: db.host,
-        dialect: 'postgres',
-        seederStorage: 'sequelize',
-        dialectOptions: {
-            ssl: {
-                require: false,
-                rejectUnauthorized: false,
-            },
-        },
+        database: process.env.DATABASE_URL,
+        host: process.env.PROD_DB_HOSTNAME,
+        dialect: 'postgres'
     }
 };
