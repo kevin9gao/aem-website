@@ -2,29 +2,31 @@ const config = require('./index');
 
 const db = config.db;
 
-console.log("Database Config:", {
-    username: db.username,
-    password: db.password,
-    database: db.database,
-    host: db.host
-});
-
+// console.log("Database Config:", {
+//     username: db.username,
+//     password: db.password,
+//     database: db.database,
+//     host: db.host
+// });
 
 module.exports = {
     development: {
         username: db.username,
-        password: db.password || '',
+        password: db.password,
         database: db.database,
         host: db.host,
         dialect: 'postgres',
         seederStorage: 'sequelize',
-        dialectOptions: {
-            ssl: false,
-        },
     },
     production: {
-        database: process.env.DATABASE_URL,
-        host: process.env.PROD_DB_HOSTNAME,
-        dialect: 'postgres'
+        use_env_variable: 'DATABASE_URL',
+        dialect: 'postgres',
+        seederStorage: 'sequelize',
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false
+            }
+        }
     }
 };

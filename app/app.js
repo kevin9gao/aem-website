@@ -7,7 +7,7 @@ require('dotenv').config();
 //     DB_HOST: process.env.DB_HOST,
 // });
 
-console.log('----ENVIRONMENT VARIABLES app.js:', process.env);
+// console.log('----ENVIRONMENT VARIABLES app.js:', process.env);
 
 const express = require('express');
 const morgan = require('morgan');
