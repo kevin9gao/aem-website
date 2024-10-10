@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=production node ./bin/www",
+    "start": "node ./bin/www",
     "start:dev": "nodemon -r dotenv/config ./bin/www",
     "test": "node app.js",
     "sequelize": "node sequelize-cli.js",

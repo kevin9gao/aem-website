@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+// console.log('CONFIG/INDEX.JS process.env.NODE_ENV', process.env.NODE_ENV);
+
 module.exports = {
     environment: process.env.NODE_ENV || 'development',
     port: process.env.PORT || 8000,

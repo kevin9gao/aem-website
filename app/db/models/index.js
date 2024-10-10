@@ -9,29 +9,36 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../../config/database.js')[env];
 const db = {};
 
+// console.log('----process.env.DATABASE_URL', process.env.DATABASE_URL);
+
 let sequelize;
 if (process.env.DATABASE_URL) {
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
-    protocol: 'postgres',
-    dialectOptions: {},
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false
+      }
+    }
   });
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, {
-    host: config.host,
-    dialect: 'postgres',
-  });
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-// Confirms the connection to the database
-(async () => {
-  try {
-    await sequelize.authenticate();
-    console.log('Connected to the database!');
-  } catch (err) {
-    console.error('Error connecting to the database:', err);
-  }
-})();
+// console.log('----------env', env);
+// console.log('----------config', config);
+// console.log('----------sequelize', sequelize);
+
+// // Confirms the connection to the database
+// (async () => {
+//   try {
+//     await sequelize.authenticate();
+//     console.log('Connected to the database!');
+//   } catch (err) {
+//     console.error('Error connecting to the database:', err);
+//   }
+// })();
 
 fs
   .readdirSync(__dirname)
