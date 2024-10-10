@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "cd app && npm install && npm start",
-    "heroku-postbuild": "cd react-app && npm install && npm run build"
+    "heroku-postbuild": "cd react-app && npm install && npm run build",
+    "sequelize": "sequelize",
+    "db:migrate": "sequelize db:migrate"
   }
 }
