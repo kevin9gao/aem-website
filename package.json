@@ -1,0 +1,7 @@
+{
+  "name": "aem-website",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd app && npm install && npm start"
+  }
+}
