@@ -5,11 +5,11 @@
     "main": "index.js",
   "scripts": {
     "heroku-postbuild": "npm run build --prefix react-app",
-    "install": "npm --prefix app install app && npm --prefix react-app install react-app",
-    "dev:app": "npm install --prefix app start",
-    "dev:react-app": "npm install --prefix react-app start",
-    "sequelize": "npm run --prefix app sequelize",
-    "sequelize-cli": "npm run --prefix app sequelize-cli",
+    "install": "npm install --prefix app && npm install --prefix react-app",
+    "dev:app": "npm start --prefix app",
+    "dev:react-app": "npm start --prefix react-app",
+    "sequelize": "npx sequelize --prefix app",
+    "sequelize-cli": "npx sequelize-cli --prefix app",
     "start": "npm start --prefix app"
   },
   "repository": {
