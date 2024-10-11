@@ -7,7 +7,7 @@
     "start": "node ./bin/www",
     "start:dev": "nodemon -r dotenv/config ./bin/www",
     "test": "node app.js",
-    "sequelize": "node sequelize-cli.js",
+    "sequelize": "sequelize",
     "sequelize-cli": "sequelize-cli"
   },
   "author": "",
