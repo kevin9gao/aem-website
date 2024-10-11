@@ -9,8 +9,8 @@
     "postinstall": "npm install -g sequelize",
     "dev:app": "npm start --prefix app",
     "dev:react-app": "npm start --prefix react-app",
-    "sequelize": "npx sequelize --prefix app",
-    "sequelize-cli": "npx sequelize-cli --prefix app",
+    "sequelize": "cd app && npx sequelize",
+    "sequelize-cli": "cd app && npx sequelize-cli",
     "start": "npm start --prefix app"
   },
   "repository": {
