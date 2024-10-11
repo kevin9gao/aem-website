@@ -1,11 +1,12 @@
 {
   "name": "aem-website",
   "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "heroku-postbuild": "npm run build --prefix react-app",
     "install": "npm install --prefix app && npm install --prefix react-app",
+    "postinstall": "npm install -g sequelize",
     "dev:app": "npm start --prefix app",
     "dev:react-app": "npm start --prefix react-app",
     "sequelize": "npx sequelize --prefix app",
