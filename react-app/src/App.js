@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import Login from './components/Auth/login';
 import Signup from './components/Auth/signup';
 import HomePage from './components/Homepage';
+import AboutUs from './components/AboutUs';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ function App() {
         <div className='app body container'>
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/about' />
+            <Route path='/about-us' element={<AboutUs />} />
             <Route path='/shop' />
             <Route path='/contact' />
             <Route path='/login' element={<Login />} />

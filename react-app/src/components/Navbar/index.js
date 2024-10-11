@@ -56,7 +56,7 @@ function Navbar({ isLoaded }) {
                 src={Logo}
               />
             </div>
-            <h2 className="navbar">AEMBioUSA</h2>
+            <h2 className="navbar">AEMBIOUSA</h2>
           </NavLink>
         </li>
         <li className="nav-list-item">
