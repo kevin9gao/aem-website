@@ -1,13 +1,15 @@
 import React from "react";
 import './About.css';
+import Banner from '../../images/about-banner.jpg';
 
 function AboutUs() {
 
 
   return (
     <div className="about container">
-      <div className="about">
-        <h1>About Us</h1>
+      <div className="about-banner-wrapper">
+        <img className="about-banner" src={Banner} loading="lazy" />
+        <h2 className="about-heading">About Us</h2>
       </div>
     </div>
   );

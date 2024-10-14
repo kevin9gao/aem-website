@@ -5,6 +5,7 @@
   padding: 1em 3em;
   background-color: white;
   height: 100%;
+  z-index: 4;
 }
 
 .navbar a {

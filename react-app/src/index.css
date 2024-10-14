@@ -18,6 +18,7 @@ main {
 
 .app.navbar.container {
   height: 7vh;
+  z-index: 4;
 }
 
 .app.body.container {
